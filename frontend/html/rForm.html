@@ -8,7 +8,7 @@
   <head>
     <script   src="https://code.jquery.com/jquery-1.12.2.min.js"   integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk="   crossorigin="anonymous"></script>
     <title>Bootstrap 101 Template</title>
-
+<link rel="stylesheet" href="../css/bootstrap-datetimepicker.mini.css" type="text/css" />
     <!-- Bootstrap -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
   <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -92,7 +92,7 @@ div  {
 </style>
 
 </div>
-
+<!--
 <form class="form-group" id= "#addEmployeeForm">
 
   <label for="cor_info" id = "trng_cors_typ">Course Type</label>
@@ -103,49 +103,31 @@ div  {
     <option>Seminar</option>
     <option>Web/Computer</option>
   </select>
+  -->
 
 
 
 <form class="form-group" id="addEmployeeForm">
-            <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              <div class="input"> id <input type="text" id="id" maxlength="100"/></div>
-             <div class="input"> name <input type="text" id="name" maxlength="100"/></div>
-              <div class="input"> email <input type="text" id="email" maxlength="100"/></div>
-              
-            
-            <div>
+            <div class="input"> Course Type <input type="text" id="trng_cors_typ" maxlength="100"/></div>
+             <div class="input"> Course Name<input type="text" id="trng_cors_nm" maxlength="100"/></div>
+              <div class="input">Course Number <input type="text" id="trng_cors_nbr" maxlength="100"/></div>
+                <div class="input">Start <input type="text" id="trng_cors_strt_dt" maxlength="100"/></div>
+             <div class="input">End Date <input type="text" id="trng_cors_end_dt" maxlength="100"/></div>
+              <div class="input"> Total Hours <input type="text" id="trng_cors_totl_nbr_hrs" maxlength="100"/></div>
+              <div class="input"> Location <input type="text" id="trng_cors_locn" maxlength="100"/></div>
+             <div class="input"> Cost<input type="text" id="trng_cors_cost" maxlength="100"/></div>
+              <div class="input"> Related Expenses <input type="text" id="trng_cors_rltd_exp_amt" maxlength="100"/></div>
+              <div class="input"> Course Benefit <input type="text" id="reqst_cors_bnft_txt" maxlength="100"/></div>
+             <div class="input"> Is this in the budget? <input type="radio" id="trng_cors_budg_pln_flg" value = "y" maxlength="100"/></div>
+              <div class="input"> No <input type="radio" id="reqst_cors_bnft_txt" value = "n" maxlength="100"/></div>
+              <div class="input"> If not then why? <input type="text" id="Trng_cors_not_budg_pln_rsn_txt" maxlength="100"/></div>
+              <div class="input"> Vendor Name <input type="text" id="vndr_nm" maxlength="100"/></div>
+             <div class="input"> Address <input type="text" id="vndr_mail_adr" maxlength="100"/></div>
+              <div class="input"> City <input type="text" id="vndr_mail_city" maxlength="100"/></div>
+              <div class="input"> State <input type="text" id="vndr_mail_st" maxlength="100"/></div>
+             <div class="input"> Zip Code <input type="text" id="vndr_mail_zip_cd" maxlength="100"/></div>
+              <div class="input"> Forward to accounting? <input type="radio" id="trng_reqst_fwd_actg_paym_flg" maxlength="100"/></div>
+              <div>
                 <input type="submit" class="btn btn-default"/>
             </div>
         </form>

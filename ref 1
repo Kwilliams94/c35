@@ -61,7 +61,6 @@ Ocode Ref 1
    // });
  //   $('#aLanding_table').html(tableString);
  // });
-<<<<<<< HEAD
  
  ---------------------------------------------------------------
  
@@ -73,8 +72,6 @@ Ocode Ref 1
       //  $(".btnApprove").onClick(function(button) {
          //  var id = button.id
       //  })
-=======
->>>>>>> 67b4e50cb460ed0bc082a93472f1ff754f937e23
 
 //});
 

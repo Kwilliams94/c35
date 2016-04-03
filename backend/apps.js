@@ -156,11 +156,10 @@ app.get('/appSend', function(req,res){
 });
 
  //post submit form
- /*
- app.post('/addrForm', function(req,res){
+
+ app.post('/Form', function(req,res){
   var sql = `
 INSERT INTO ttx_empl_trng_reqst (
-trng_reqst_nbr,
 trng_cors_typ,                 
 trng_cors_nm,                  
 trng_cors_nbr,                 
@@ -170,21 +169,19 @@ trng_cors_totl_nbr_hrs,
 trng_cors_locn,                 
 trng_cors_cost,                 
 Trng_cors_rltd_exp_amt,         
-Trng_reqst_cors_bnft_tx,        
+Trng_reqst_cors_bnft_txt,        
 Trng_Cors_Budg_Pln_Flg,
-Trng_Cors_Not_Budg_Pln_Rsn_Tx,
+Trng_Cors_Not_Budg_Pln_Rsn_Txt,
 Vndr_nm,
 Vndr_Mail_Addr,
 Vndr_Mail_City,
 Vndr_Mail_St,
 Vndr_Mail_Zip_Cd,
-Lst_update_d,
 Trng_Reqst_Fwd_Actg_Paym_Flg) 
 VALUES (
 '${req.body.trng_cors_nbr}',
 '${req.body.trng_cors_typ }',
 '${req.body.trng_cors_nm}',
-'${req.body.trng_cors_nbr}',
 '${req.body.trng_cors_strt_dt}',
 '${req.body.trng_cors_end_dt}',
 '${req.body.trng_cors_totl_nbr_hrs}',
@@ -199,7 +196,6 @@ VALUES (
 '${req.body.vndr_mail_city}',
 '${req.body.vndr_mail_st}',
 '${req.body.vndr_zip_cd}',
-"void"
 '${req.body.trng_reqst_fwd_actg_paym_flag},
 ');
   `;
@@ -209,7 +205,7 @@ VALUES (
   return res.send("success");
 });
 
-*/
+
 
 
 
