@@ -99,11 +99,19 @@ app.get('/zUi', function(req,res){
 
 
 //FOR THE LANDING PAGE APPROVERS
+/*
 
+app.get('/addrForm', function(req,res){
+  console.log('app addrForm/ requested');
+  database.executeQuery("select Cast (DATE_PART('year',  current_date)as text) || 0 || Cast (DATE_PART('month',  current_date)as text) || count(*) from date_2016 as trng_reqst_nbr;", function(results) {
+      res.send(results);
+});
+});
+*/
 
 app.get('/getLanding', function(req,res){
   console.log('app getLanding/ requested');
-  database.executeQuery("SELECT trng_reqst_nbr, trng_cors_nm, trng_cors_cost, trng_reqst_immed_supv_apvl_flg FROM ttx_empl_trng_reqst WHERE trng_reqst_immed_supv_apvl_flg = 'P'", function(results) {
+  database.executeQuery("SELECT trng_reqst_nbr, trng_cors_nm, trng_cors_cost, trng_reqst_immed_supv_apvl_flg, trng_cors_strt_dt::date FROM ttx_empl_trng_reqst WHERE trng_reqst_immed_supv_apvl_flg = 'P';", function(results) {
       res.send(results);
 });
 });
@@ -147,8 +155,61 @@ app.get('/appSend', function(req,res){
   
 });
 
- //post
+ //post submit form
+ /*
+ app.post('/addrForm', function(req,res){
+  var sql = `
+INSERT INTO ttx_empl_trng_reqst (
+trng_reqst_nbr,
+trng_cors_typ,                 
+trng_cors_nm,                  
+trng_cors_nbr,                 
+trng_cors_strt_dt,             
+trng_cors_end_dt,               
+trng_cors_totl_nbr_hrs,         
+trng_cors_locn,                 
+trng_cors_cost,                 
+Trng_cors_rltd_exp_amt,         
+Trng_reqst_cors_bnft_tx,        
+Trng_Cors_Budg_Pln_Flg,
+Trng_Cors_Not_Budg_Pln_Rsn_Tx,
+Vndr_nm,
+Vndr_Mail_Addr,
+Vndr_Mail_City,
+Vndr_Mail_St,
+Vndr_Mail_Zip_Cd,
+Lst_update_d,
+Trng_Reqst_Fwd_Actg_Paym_Flg) 
+VALUES (
+'${req.body.trng_cors_nbr}',
+'${req.body.trng_cors_typ }',
+'${req.body.trng_cors_nm}',
+'${req.body.trng_cors_nbr}',
+'${req.body.trng_cors_strt_dt}',
+'${req.body.trng_cors_end_dt}',
+'${req.body.trng_cors_totl_nbr_hrs}',
+'${req.body.trng_cors_locn}',
+'${req.body.trng_cors_cost}',
+'${req.body.trng_cors_rltd_exp_amt}',
+'${req.body.trng_reqst_cors_bnft_tx}',
+'${req.body.trng_cors_budg_pln_flg}',
+'${req.body.trng_cors_not_budg_pln_rsn_tx}',
+'${req.body.vndr_nm}',
+'${req.body.vndr_mail_addr}',
+'${req.body.vndr_mail_city}',
+'${req.body.vndr_mail_st}',
+'${req.body.vndr_zip_cd}',
+"void"
+'${req.body.trng_reqst_fwd_actg_paym_flag},
+');
+  `;
+   database.executeQuery(sql);
+  console.log('posted to /addrForm');
+  console.log(JSON.stringify(req.body));
+  return res.send("success");
+});
 
+*/
 
 
 
@@ -169,5 +230,3 @@ app.listen(port, function(){
   console.log("Application is running:");
   console.log("Listening on " + port);
 });
-
-

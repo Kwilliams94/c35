@@ -1,10 +1,28 @@
-<<<<<<< HEAD
-sequel for the buttons
+******************************
+key generation for date_2016
+
+If you have a column called id please drop the colum
+alter table date_2016 add  id serial;
+************************************
+
+
+sequel for the button
+
+Lst_update_d set = "void"
+
+
 /////////////Approver\\\\\\\\\\\\\\\\\
 Update ttx_empl_trng_reqst
 set  trng_reqst_immed_supv_apvl_flg
 where trng_request_immed_supv_apv_flg = 'Y'
 
+
+
+////////////////////////////////////////////
+
+
+ALTER empl_info
+ADD CONSTRAINT id PRIMARY KEY (id);
 
 \\\\\\\\\\\\\\Reject/////////////////
 Update ttx_empl_trng_reqst
@@ -17,8 +35,6 @@ where trng_request_immed_supv_apv_flg = 'N'
 
 
 
-=======
->>>>>>> 67b4e50cb460ed0bc082a93472f1ff754f937e23
 function Add(){ $("#tblData tbody").append( "<tr>"+ "<td><input type='text'/></td>"+ "<td><input type='text'/></td>"+ "<td><input type='text'/></td>"+ "<td><img src='images/disk.png' class='btnSave'><img src='images/delete.png' class='btnDelete'/></td>"+ "</tr>"); $(".btnSave").bind("click", Save);	$(".btnDelete").bind("click", Delete); }; 
 
 Read more: http://mrbool.com/how-to-add-edit-and-delete-rows-of-a-html-table-with-jquery/26721#ixzz44JiYH2II

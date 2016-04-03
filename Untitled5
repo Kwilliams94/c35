@@ -1,0 +1,31 @@
+                        name                        |                       email                        | superuser 
+----------------------------------------------------+----------------------------------------------------+-----------
+ Alan Tang                                          | ALAN_TANG@TTX.COM                                  | 
+ Orline Cacayan                                     | ORLINE_CACAYAN@TTX.COM                             | 
+ Kendall Zettlmeier                                 | KENDALL.ZETTLMEIER@TTX.COM                         | 
+ Jacqueline Dukes                                   | JACQUELINE.DUKES@TTX.COM                           | 
+ Rich Rousseau                                      | RICH.ROUSSEAU@TTX.COM                              | 
+                                                    | 
+ Scott Wissel                                       | scott.wissel@ttx.com                               | 
+ Purnesh Rustagi                                    | purnesh.rustagi@ttx.com                            | 
+ Kath Miller                                        | kathey_miller@ttx.com                              | 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Alan Tang','ALAN_TANG@TTX.COM','e','e');                                 
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Orline Cacayan', 'ORLINE_CACAYAN@TTX.COM','e','e');                              
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Kendall Zettlmeier','KENDALL.ZETTLMEIER@TTX.COM','e','e');                          
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Jacqueline Dukes','JACQUELINE.DUKES@TTX.COM','e','e');                            
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Rich Rousseau','RICH.ROUSSEAU@TTX.COM','e','e');           
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Kathy Miller','kathy_miller@ttx.com', 's','s');             
+ 
+ 
+ 
+ 
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Scott Wissel','scott.wissel@ttx.com','s','s');                                
+ INSERT INTO empl_info (name,email,super_user,rank) VALUES ('Purnesh Rustagi','purnesh.rustagi@ttx.com','s','s'); 

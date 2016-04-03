@@ -15,11 +15,7 @@ $(document).ready(function(){
     $.each(results, function(index, rowObject){
       tableString += "<tr class='clickable-row'><td>" + rowObject.trng_reqst_nbr + "</td>" +
         "<td>" + rowObject.trng_cors_nm + "</td>" +
-<<<<<<< HEAD
         "<td>" + rowObject.trng_cors_strt_dt + "</td><td>" + rowObject.trng_cors_end_dt + "<tr><td><input type='button' name='approve'  value='Complete Course' onclick='selectAll()'></td></tr></tr>";
-=======
-        "<td>" + rowObject.trng_cors_strt_dt + "</td><td>" + rowObject.trng_cors_end_dt + "</td><td><input type='button' name='approve'  value='Complete Course' onclick='selectAll()'></td></tr>";
->>>>>>> 67b4e50cb460ed0bc082a93472f1ff754f937e23
 
     });
     $('#cHistoryTable').html(tableString);
