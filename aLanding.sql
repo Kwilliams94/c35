@@ -1,0 +1,1 @@
+select trng_cors_nm, trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';

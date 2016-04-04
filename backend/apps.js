@@ -111,7 +111,7 @@ app.get('/addrForm', function(req,res){
 
 app.get('/getLanding', function(req,res){
   console.log('app getLanding/ requested');
-  database.executeQuery("SELECT trng_cors_nm, trng_cors_cost, trng_reqst_immed_supv_apvl_flg, trng_cors_strt_dt::date FROM ttx_empl_trng_reqst WHERE trng_reqst_immed_supv_apvl_flg = 'P';", function(results) {
+  database.executeQuery("select trng_cors_nm, trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';", function(results) {
       res.send(results);
 });
 });
