@@ -5,6 +5,8 @@ var port = process.env.PORT || 1337;
 var bodyParser = require('body-parser');
 app.use( bodyParser.json() );
 app.use( bodyParser.urlencoded({ extended: true }) );
+var moment = require('moment');
+moment().format();  //installed by jeff 4/4/2016
 
 //Set up to render the html correctly from the html folder
 app.engine('html', require('ejs').renderFile);
@@ -114,11 +116,6 @@ app.get('/getLanding', function(req,res){
   database.executeQuery("select trng_cors_nm, trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';", function(results) {
       res.send(results);
 });
-});
-//button approver call
-app.get('/appButton', function(req,res){
-  console.log('app /appButton requested');
-  return res.render('appButton.html');
 });
 
 //aLanding call

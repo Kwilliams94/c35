@@ -19,6 +19,7 @@
   "homepage": "https://github.com/icstars/nodeworkshop#readme",
   "dependencies": {
     "ejs": "^2.4.1",
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "moment": "^2.12.0"
   }
 }

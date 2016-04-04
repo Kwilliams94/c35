@@ -16,6 +16,7 @@ $(document).ready(function(){
                 $('#aLanding_table').html(tableString+scriptString);
       
            
+           
   var scriptString = function approve(){ 
        $.post('/approved', { 
        trng_reqst_immed_supv_apvl_flg : 'Y'    });    }   
