@@ -111,9 +111,14 @@ app.get('/addrForm', function(req,res){
 
 app.get('/getLanding', function(req,res){
   console.log('app getLanding/ requested');
-  database.executeQuery("SELECT trng_reqst_nbr, trng_cors_nm, trng_cors_cost, trng_reqst_immed_supv_apvl_flg, trng_cors_strt_dt::date FROM ttx_empl_trng_reqst WHERE trng_reqst_immed_supv_apvl_flg = 'P';", function(results) {
+  database.executeQuery("SELECT trng_cors_nm, trng_cors_cost, trng_reqst_immed_supv_apvl_flg, trng_cors_strt_dt::date FROM ttx_empl_trng_reqst WHERE trng_reqst_immed_supv_apvl_flg = 'P';", function(results) {
       res.send(results);
 });
+});
+//button approver call
+app.get('/appButton', function(req,res){
+  console.log('app /appButton requested');
+  return res.render('appButton.html');
 });
 
 //aLanding call
