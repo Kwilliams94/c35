@@ -16,7 +16,7 @@ CREATE TABLE trainrequest.public.TTX_Empl_Trng_Reqst (
 	Trng_Cors_End_Dt timestamp NOT NULL,
 	Trng_Cors_Totl_Nbr_Hrs decimal(5, 2) NOT NULL,
 	Trng_Cors_Cost decimal(7, 2) NOT NULL,
-	Trng_Cors_Rltd_Exp_Amt decimal(7, 2) NULL,
+	Trng_Cors_Raltcimal(7, 2) NULL,
 	Trng_Cors_Locn varchar(256) NOT NULL,
 	Trng_Cors_Typ char(25) NULL,
 	Trng_Reqst_Cors_Bnft_Txt varchar(256) NOT NULL,

@@ -4,6 +4,10 @@
 -- connect:
 -- sudo sudo -u postgres psql
 
+
+-- \c trainrequest
+
+
 -- get to the filesystem while still logged in as super user
 -- \! 
 

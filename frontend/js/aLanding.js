@@ -2,6 +2,8 @@
 
 $(document).ready(function(){
    
+   
+   
 
    
     $.get('/getLanding', function(results){
@@ -12,21 +14,16 @@ $(document).ready(function(){
    
    
     $.each(results, function(index, rowObject){
-      tableString += "<tr><td>" + rowObject.name + "</td><td>" + rowObject.trng_cors_nm + "</td><td>" + rowObject.trng_cors_cost + "</td><td>" + rowObject.trng_cors_strt_dt + "</td></tr>"
-                $('#aLanding_table').html(tableString+scriptString);
+      tableString += "<tr><td><a class='detailview' id='' href= '/view/" + rowObject.trng_reqst_nbr + "'>" + rowObject.name +  "</a></td><td>" + rowObject.trng_cors_nm + "</td><td>" + rowObject.trng_cors_cost + "</td><td>" + rowObject.trng_cors_strt_dt + "</td></tr>"
+                $('#aLanding_table').html(tableString);
       
            
-           
-  var scriptString = function approve(){ 
-       $.post('/approved', { 
-       trng_reqst_immed_supv_apvl_flg : 'Y'    });    }   
-           
-
-     
-     
+ 
 
     
 });
+
+
 
 
     $('#aLanding_table').html(tableString);
@@ -38,5 +35,12 @@ $(document).ready(function(){
  
 });
 
-
+$(".detailview").on('click', function(){
+    //var id = this.id
+    //ajax get 
+    //set values in html from json
+    //fade out
+    //fade in
+    
+});
  

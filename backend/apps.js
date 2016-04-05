@@ -78,11 +78,40 @@ app.get('/contactUs', function(req,res){
 
 
 
+
+
 //FOR THE cHistory PAGE USER
 app.get('/cHistory', function(req,res){
   console.log('app cHistory/  requested');
   return res.render('cHistory.html');
 });
+
+// *****************************view page*************************
+
+
+
+
+
+//
+
+
+
+app.get('/view/:id', function(req,res){
+  console.log('app /view/:id');
+  var id = req.params.id;
+  var sql=`select * from ttx_empl_trng_reqst where trng_reqst_nbr  = '${id}';
+  `;
+  console.log(sql);
+ database.executeQuery(sql , function(results){
+   console.log(JSON.stringify(results))
+  
+  res.send(results);
+  
+  // res.send(results);
+ });
+  
+  
+  });
 
 
 
@@ -90,6 +119,7 @@ app.get('/getHistory', function(req,res){
   console.log('app getHistory/ requested');
   database.executeQuery("SELECT trng_reqst_nbr, trng_cors_nm, trng_cors_strt_dt, trng_cors_end_dt FROM ttx_empl_trng_reqst", function(results) {
       res.send(results);
+     
 });
 });
 //zui get
@@ -113,7 +143,7 @@ app.get('/addrForm', function(req,res){
 
 app.get('/getLanding', function(req,res){
   console.log('app getLanding/ requested');
-  database.executeQuery("select trng_cors_nm, trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';", function(results) {
+  database.executeQuery("select trng_cors_nm,trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, trng_reqst_nbr,name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';", function(results) {
       res.send(results);
 });
 });
@@ -156,6 +186,8 @@ app.get('/appSend', function(req,res){
  
   
 });
+
+
 
  //post submit form
 
@@ -208,8 +240,15 @@ VALUES (
 });
 
 
+//get Info Form
 
 
+app.get('/getInfo', function(req,res){
+  console.log('app /getInfo requested');
+  database.executeQuery("select trng_cors_typ, trng_cors_nm,trng_cors_nbr, trng_cors_strt_dt,trng_cors_end_dt,trng_cors_totl_nbr_hrs,trng_cors_locn,trng_cors_cost,Trng_cors_rltd_exp_amt,Trng_reqst_cors_bnft_txt,trng_Cors_Budg_Pln_Flg,trng_Cors_Not_Budg_Pln_Rsn_Txt,Vndr_nm,vndr_Mail_Addr,Vndr_Mail_City,Vndr_Mail_St,Vndr_Mail_Zip_Cd,Trng_Reqst_Fwd_Actg_Paym_Flg from ttx_empl_trng_reqst ", function(results) {
+      res.send(results);
+});
+});
 
 
 /*
