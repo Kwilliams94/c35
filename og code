@@ -1,21 +1,14 @@
-<html>
-    <meta>
-    </meta>
-    <head>
-        
-        
-        <script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-        <script type="text/javascript" src="./js/rForm.js"></script>
-    </head>
-    <body>
-        
+
+<div id="viewForm">
+ 
+  
+  
+
+ 
         <div id="form">
         
         <table id="aLanding_table">
-            
-            
-        </table>
+
         <div>
            Course Type
            <p id= "trng_cors_typ" ></p>
@@ -106,7 +99,9 @@
       
            <p id ="vndr_mail_zip_cd"></p>
             
-        </div>   <script>
+        </div> 
+        
+      <!--<script>
          function approveThis(){
     
               $.post('/approvalz', {
@@ -128,12 +123,10 @@
             };
                 
             </script>
-            <form action="/getInfo"method="post">
-           <button onclick = "approveThis()">Approve Me!</button>
+            
+            -->
+            
+         <button onclick = "approveThis()">Approve Me!</button>
             <button onclick = "rejectThis()">Reject This!</button>
-      
-        </form>
         
         <div>
-    </body>
-</html>

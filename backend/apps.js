@@ -194,23 +194,20 @@ app.get('/appSend', function(req,res){
  app.post('/Form', function(req,res){
   var sql = `
 INSERT INTO ttx_empl_trng_reqst (
+trng_cors_nbr,
 trng_cors_typ,                 
 trng_cors_nm,                  
-trng_cors_nbr,                 
 trng_cors_strt_dt,             
 trng_cors_end_dt,               
 trng_cors_totl_nbr_hrs,         
 trng_cors_locn,                 
 trng_cors_cost,                 
 Trng_cors_rltd_exp_amt,         
-Trng_reqst_cors_bnft_txt,        
 Trng_Cors_Budg_Pln_Flg,
-Trng_Cors_Not_Budg_Pln_Rsn_Txt,
 Vndr_nm,
 Vndr_Mail_Addr,
 Vndr_Mail_City,
 Vndr_Mail_St,
-Vndr_Mail_Zip_Cd,
 Trng_Reqst_Fwd_Actg_Paym_Flg) 
 VALUES (
 '${req.body.trng_cors_nbr}',
@@ -222,14 +219,11 @@ VALUES (
 '${req.body.trng_cors_locn}',
 '${req.body.trng_cors_cost}',
 '${req.body.trng_cors_rltd_exp_amt}',
-'${req.body.trng_reqst_cors_bnft_tx}',
 '${req.body.trng_cors_budg_pln_flg}',
-'${req.body.trng_cors_not_budg_pln_rsn_tx}',
 '${req.body.vndr_nm}',
 '${req.body.vndr_mail_addr}',
 '${req.body.vndr_mail_city}',
 '${req.body.vndr_mail_st}',
-'${req.body.vndr_zip_cd}',
 '${req.body.trng_reqst_fwd_actg_paym_flag},
 ');
   `;
@@ -242,7 +236,7 @@ VALUES (
 
 //get Info Form
 
-
+/*
 app.get('/getInfo', function(req,res){
   console.log('app /getInfo requested');
   database.executeQuery("select trng_cors_typ, trng_cors_nm,trng_cors_nbr, trng_cors_strt_dt,trng_cors_end_dt,trng_cors_totl_nbr_hrs,trng_cors_locn,trng_cors_cost,Trng_cors_rltd_exp_amt,Trng_reqst_cors_bnft_txt,trng_Cors_Budg_Pln_Flg,trng_Cors_Not_Budg_Pln_Rsn_Txt,Vndr_nm,vndr_Mail_Addr,Vndr_Mail_City,Vndr_Mail_St,Vndr_Mail_Zip_Cd,Trng_Reqst_Fwd_Actg_Paym_Flg from ttx_empl_trng_reqst ", function(results) {
@@ -250,7 +244,7 @@ app.get('/getInfo', function(req,res){
 });
 });
 
-
+*/
 /*
   app.post('/getzUi', function(req,res){
     console.log("Sending the data");

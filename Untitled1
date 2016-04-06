@@ -1,0 +1,1 @@
+ ALTER TABLE ttx_empl_trng_reqst MODIFY COLUMN trng_cors_strt_dt text;

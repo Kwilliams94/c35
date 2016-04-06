@@ -79,6 +79,9 @@ div  {
 
 
 
+<div id = "Jeff">
+  
+
   
 
     <br>
@@ -97,35 +100,13 @@ div  {
         
 <!-- This is the table -->
 <table id="aLanding_table">
-  <script>
-    
-
-  </script>
-
-  
 
 
-       
-
-
-
-
-<!-- <tr><td><input type="button" name="approve"  value="approve" onclick="selectAll()"></td>
-<td><input type="button" name="disapprove" value="disapprove" onclick="selectAll()"></td>
-
-<!-- figure out a way to where you add a button and then put it onto the approval -->
-</table>
-
-
-
-<!-- This is the source cod for the buttons
-   <form name="t4">     
+   
 <table>
 
 
 
-<tr><td><input type="button" name="approve"  value="approve" onclick="selectAll()"></td>
-<td><input type="button" name="disapprove" value="disapprove" onclick="selectAll()"></td>
 </table> 
 
 </form>
@@ -138,6 +119,129 @@ div  {
       </div>
       
       </div>
+</div>
+<div id="Kevin">
+  
+ <h3>Employee Information</h3>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+   <br>
+          <div>
+           Course Type
+           <p id= "trng_cors_typ" ></p>
+            
+        </div>
+        
+      <div>
+        Course Name
+           <p id = "trng_cors_nm"></p>
+            
+        </div>
+        
+        <div>
+      
+          Start Date
+           <p id = "trng_cors_strt_dt"></p>
+            
+        </div>
+        
+        <div>
+      
+        End Date
+           <p id="trng_cors_end_dt"></p>
+            
+        </div>
+        <div>
+      
+         Total Hours
+           <p id= "trng_cors_totl_nbr_hrs"></p>
+            
+        </div>
+        <div>
+      
+         Location
+           <p id = "trng_cors_locn"></p>
+            
+        </div>
+        
+        <div>
+      
+          Cost
+           <p id = "trng_cors_cost"></p>
+            
+        </div>
+        
+        <div>
+      
+        Related Expenses
+           <p id = "trng_cors_rltd_exp_amt"></p>
+            
+        </div>
+    <div>
+      
+        Is the cost included in this years plan?
+           <p id = "trng_cors_budg_pln_flg"></p>
+            
+        </div>
+        <div>
+            <h1>VENDOR INFORMATION</h1>
+      
+         Name
+           <p id = "vndr_nm"></p>
+            
+        </div>
+        
+         <div>
+             Address
+            
+          
+           <p id = "vndr_mail_addr"></p>
+            
+        </div>
+        <div>
+            City
+      
+       
+           <p id =" vndr_mail_city"></p>
+            
+        </div>
+        <div>
+            State
+      
+           <p id ="vndr_mail_st"></p>
+            
+        </div>
+        <div>
+            Zip Code
+      
+           <p id ="vndr_mail_zip_cd"></p>
+            
+        </div> 
+</div>
 
+
+<!-- terminater------------------------------------------------->
+
+  <script>
+    $('#Jeff').on('click', function(){
+        $('#Jeff').hide();
+        $('#Kevin').fadeIn();
+        
+     //   var id = this.id;
+      //    $.ajax({
+  //method: "GET",
+ // url: "/view/"+ id,
+   //       });
+        
+    })
+   
+          
+    </script>
 </body>
 </html>
+
+
+
