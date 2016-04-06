@@ -145,6 +145,7 @@ app.get('/getLanding', function(req,res){
   console.log('app getLanding/ requested');
   database.executeQuery("select trng_cors_nm,trng_cors_cost, Trng_Reqst_Immed_Supv_Apvl_Flg, trng_cors_strt_dt, trng_reqst_nbr,name from ttx_empl_trng_reqst t, empl_info e  where e.email = t.Cntct_Email_Addr and trng_reqst_immed_supv_apvl_flg ='P';", function(results) {
       res.send(results);
+
 });
 });
 
@@ -194,37 +195,10 @@ app.get('/appSend', function(req,res){
  app.post('/Form', function(req,res){
   var sql = `
 INSERT INTO ttx_empl_trng_reqst (
-trng_cors_nbr,
-trng_cors_typ,                 
-trng_cors_nm,                  
-trng_cors_strt_dt,             
-trng_cors_end_dt,               
-trng_cors_totl_nbr_hrs,         
-trng_cors_locn,                 
-trng_cors_cost,                 
-Trng_cors_rltd_exp_amt,         
-Trng_Cors_Budg_Pln_Flg,
-Vndr_nm,
-Vndr_Mail_Addr,
-Vndr_Mail_City,
-Vndr_Mail_St,
-Trng_Reqst_Fwd_Actg_Paym_Flg) 
+trng_cors_nbr
 VALUES (
 '${req.body.trng_cors_nbr}',
-'${req.body.trng_cors_typ }',
-'${req.body.trng_cors_nm}',
-'${req.body.trng_cors_strt_dt}',
-'${req.body.trng_cors_end_dt}',
-'${req.body.trng_cors_totl_nbr_hrs}',
-'${req.body.trng_cors_locn}',
-'${req.body.trng_cors_cost}',
-'${req.body.trng_cors_rltd_exp_amt}',
-'${req.body.trng_cors_budg_pln_flg}',
-'${req.body.vndr_nm}',
-'${req.body.vndr_mail_addr}',
-'${req.body.vndr_mail_city}',
-'${req.body.vndr_mail_st}',
-'${req.body.trng_reqst_fwd_actg_paym_flag},
+
 ');
   `;
    database.executeQuery(sql);

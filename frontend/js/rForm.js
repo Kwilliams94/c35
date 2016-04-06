@@ -3,7 +3,8 @@ $(document).ready(function(){
 
   $('#addEmployeeForm').submit(function(event){
 
-    $.post('/Form', {   
+    $.post('/Form', {  
+      trng_reqst_nbr :                $('trng_reqst_nbr').val(),
       trng_cors_typ:                  $('trng_cors_typ').val(),
       trng_cors_nm :                  $('trng_cors_nm').val(),
       trng_cors_nbr:                  $('trng_cors_nbr').val(),        

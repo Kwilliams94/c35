@@ -1,1 +1,18 @@
- ALTER TABLE ttx_empl_trng_reqst MODIFY COLUMN trng_cors_strt_dt text;
+
+ 
+
+
+'${req.body.trng_cors_typ }',
+'${req.body.trng_cors_nm}',
+'${req.body.trng_cors_strt_dt}',
+'${req.body.trng_cors_end_dt}',
+'${req.body.trng_cors_totl_nbr_hrs}',
+'${req.body.trng_cors_locn}',
+'${req.body.trng_cors_cost}',
+'${req.body.trng_cors_rltd_exp_amt}',
+'${req.body.trng_cors_budg_pln_flg}',
+'${req.body.vndr_nm}',
+'${req.body.vndr_mail_addr}',
+'${req.body.vndr_mail_city}',
+'${req.body.vndr_mail_st}',
+'${req.body.trng_reqst_fwd_actg_paym_flag},

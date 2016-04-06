@@ -123,102 +123,125 @@ div  {
 <div id="Kevin">
   
  <h3>Employee Information</h3>
-   <br>
-   <br>
-   <br>
-   <br>
-   <br>
+      <br>
    <br>
           <div>
-           Course Type
+         <h4>  Course Type</h4>
            <p id= "trng_cors_typ" ></p>
             
         </div>
         
       <div>
-        Course Name
+      <h4>  Course Name</h4>
            <p id = "trng_cors_nm"></p>
             
         </div>
         
         <div>
       
-          Start Date
+        <h4>  Start Date</h4>
            <p id = "trng_cors_strt_dt"></p>
             
         </div>
         
         <div>
       
-        End Date
+      <h4>  End Date</h4>
            <p id="trng_cors_end_dt"></p>
             
         </div>
         <div>
       
-         Total Hours
+        <h4> Total Hours</h4>
            <p id= "trng_cors_totl_nbr_hrs"></p>
             
         </div>
         <div>
       
-         Location
+        <h4> Location</h4>
            <p id = "trng_cors_locn"></p>
             
         </div>
         
         <div>
       
-          Cost
+         <h4> Cost</h4>
            <p id = "trng_cors_cost"></p>
             
         </div>
         
         <div>
       
-        Related Expenses
+       <h4> Related Expenses</h4>
            <p id = "trng_cors_rltd_exp_amt"></p>
             
         </div>
     <div>
       
-        Is the cost included in this years plan?
+       <h4> Is the cost included in this years plan?</h4>
            <p id = "trng_cors_budg_pln_flg"></p>
             
         </div>
         <div>
             <h1>VENDOR INFORMATION</h1>
       
-         Name
+         <h4>Name</h4>
            <p id = "vndr_nm"></p>
             
         </div>
         
          <div>
-             Address
+             <h4> Address </h4>
             
           
            <p id = "vndr_mail_addr"></p>
             
         </div>
         <div>
-            City
+            <h4>City</h4>
       
        
            <p id =" vndr_mail_city"></p>
             
         </div>
         <div>
-            State
+          <h4>  State </h4>
       
            <p id ="vndr_mail_st"></p>
             
         </div>
         <div>
-            Zip Code
+           <h4> Zip Code </h4>
       
            <p id ="vndr_mail_zip_cd"></p>
-            
+          <script> function approveThis(){
+    
+              $.post('/approvalz', {
+                     trng_reqst_immed_supv_apvl_flg : 'Y'
+                
+                    })
+        };
+//reeject
+
+   function rejectThis(){
+       
+       confirm("Are you sure?")
+    
+                        $.post('/approvalz', {
+                            
+                            trng_reqst_immed_supv_apvl_flg : 'N'
+                            
+                            
+                            })
+        
+            };
+                
+            </script>
+           <button onclick = "approveThis()">Approve Me!</button>
+            <button onclick = "rejectThis()">Reject This!</button>
+       <br>
+       <br>
+       <br>
         </div> 
 </div>
 
@@ -226,17 +249,14 @@ div  {
 <!-- terminater------------------------------------------------->
 
   <script>
-    $('#Jeff').on('click', function(){
-        $('#Jeff').hide();
-        $('#Kevin').fadeIn();
-        
-     //   var id = this.id;
-      //    $.ajax({
-  //method: "GET",
- // url: "/view/"+ id,
-   //       });
-        
-    })
+    $('.detailView').on('click', function(){
+       // $('#Jeff').hide();
+       // $('#Kevin').fadeIn();
+        console.log('here');
+        var id = ($(this).attr('id'));
+        console.log($(this));
+    });
+      
    
           
     </script>
