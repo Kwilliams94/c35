@@ -1,0 +1,93 @@
+trng_cors_typ                 
+trng_cors_nm                  
+trng_cors_nbr                 
+trng_cors_strt_dt             
+trng_cors_end_dt               
+trng_cors_totl_nbr_hrs         
+trng_cors_locn                 
+trng_cors_cost                 
+Trng_cors_rltd_exp_amt         
+Trng_reqst_cors_bnft_tx        
+Trng_Cors_Budg_Pln_Flg
+Trng_Cors_Not_Budg_Pln_Rsn_Tx
+Vndr_nm
+Vndr_Mail_Addr
+Vndr_Mail_City
+Vndr_Mail_St
+Vndr_Mail_Zip_Cd           
+Trng_Reqst_Fwd_Actg_Paym_Flg
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+====================================================
+EXTRACT(  month FROM TIMESTAMP '2001-02-16 20:38:40')
+, EXTRACT(  year  FROM TIMESTAMP
+===================================================
+
+$(document).ready(function(){
+ $('#approve').on('click',(function(){
+     
+     var approve = {
+         
+         trng_request_immed_supv_apv_flg : $approve.val()
+     };
+     $.ajax({
+         type: 'POST',
+         url: '/getApp',
+         data: approve,
+         success: function(newApp){
+             alert("successful submission");
+         }
+     });
+
+ 
+}));
+});
+
+============================================================
+
+ 
+ $(document).ready(function() {
+
+    $('button[name="approve"]').click(function(){
+        //do stuff
+        $(this).addClass('clicked');
+    })
+    $('button[name="reject"]').click(function(){
+        //do stuff
+        $(this).addClass('clicked');
+    })
+    $('button[name="cancel"]').click(function(){
+        //do stuff
+        $(this).addClass('clicked');
+    })
+
+    $('approve').submit(function(event) {
+        var val = $("button.clicked[type=submit]").attr('name').removeClass('clicked');
+
+        alert(val);
+
+        if (val == 'approve') {
+            alert('approve');
+        } else if (val == 'reject') {
+            alert('reject');
+        } else if (val == 'cancel') {
+            alert('cancel');
+        }
+
+        return false;
+    });        
+});

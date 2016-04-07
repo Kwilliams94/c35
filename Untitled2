@@ -1,0 +1,24 @@
+
+
+
+
+
+ | 
+ Orline Cacayan                                     | ORLINE_CACAYAN@TTX.COM                             | 
+ Kendall Zettlmeier                                 | KENDALL.ZETTLMEIER@TTX.COM                         | 
+ Jacqueline Dukes                                   | JACQUELINE.DUKES@TTX.COM                           | 
+ Rich Rousseau   
+ 
+ 
+app.post('/addTrain', function(req,res){
+  var sql = `
+   INSERT INTO trains (name,inService,numberOfAvailable) 
+   VALUES ('${req.body.nameOfTrain}', '${req.body.inService}', '${req.body.availableTrains}');
+  `;
+   database.executeQuery(sql);
+  console.log('posted to /addTrain');
+  console.log(JSON.stringify(req.body));
+  return res.send("success");
+});
+
+

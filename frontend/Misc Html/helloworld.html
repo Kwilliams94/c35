@@ -1,0 +1,32 @@
+<html>
+    <head>
+         <link rel="stylesheet" type="text/css" href="../css/helloworld.css">
+      <script src="https://code.jquery.com/jquery-1.12.2.js" integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>hello world from html file!
+    <button id="foo">
+        
+        foo
+    </button>
+    
+<button id ='bar'>
+    
+    bar
+</button>    
+    
+    <script>
+    
+   var message = "Spoon!";
+$( "#foo" ).bind( "click", {
+  msg: message
+}, function( event ) {
+  alert( event.data.msg );
+});
+message = "Not in the face!";
+$( "#bar" ).bind( "click", {
+  msg: message
+}, function( event ) {
+  alert( event.data.msg );
+});</script>!</body>
+</html>

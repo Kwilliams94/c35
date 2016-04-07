@@ -1,0 +1,139 @@
+<html>
+    <meta>
+    </meta>
+    <head>
+        
+        
+        <script src="http://ajax.microsoft.com/ajax/jQuery/jquery-1.4.2.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./js/rForm.js"></script>
+    </head>
+    <body>
+        
+        <div id="form">
+        
+        <table id="aLanding_table">
+            
+            
+        </table>
+        <div>
+           Course Type
+           <p id= "trng_cors_typ" ></p>
+            
+        </div>
+        
+      <div>
+        Course Name
+           <p id = "trng_cors_nm"></p>
+            
+        </div>
+        
+        <div>
+      
+          Start Date
+           <p id = "trng_cors_strt_dt"></p>
+            
+        </div>
+        
+        <div>
+      
+        End Date
+           <p id="trng_cors_end_dt"></p>
+            
+        </div>
+        <div>
+      
+         Total Hours
+           <p id= "trng_cors_totl_nbr_hrs"></p>
+            
+        </div>
+        <div>
+      
+         Location
+           <p id = "trng_cors_locn"></p>
+            
+        </div>
+        
+        <div>
+      
+          Cost
+           <p id = "trng_cors_cost"></p>
+            
+        </div>
+        
+        <div>
+      
+        Related Expenses
+           <p id = "trng_cors_rltd_exp_amt"></p>
+            
+        </div>
+    <div>
+      
+        Is the cost included in this years plan?
+           <p id = "trng_cors_budg_pln_flg"></p>
+            
+        </div>
+        <div>
+            <h1>VENDOR INFORMATION</h1>
+      
+         Name
+           <p id = "vndr_nm"></p>
+            
+        </div>
+        
+         <div>
+             Address
+            
+          
+           <p id = "vndr_mail_addr"></p>
+            
+        </div>
+        <div>
+            City
+      
+       
+           <p id =" vndr_mail_city"></p>
+            
+        </div>
+        <div>
+            State
+      
+           <p id ="vndr_mail_st"></p>
+            
+        </div>
+        <div>
+            Zip Code
+      
+           <p id ="vndr_mail_zip_cd"></p>
+            
+        </div>   <script>
+         function approveThis(){
+    
+              $.post('/approvalz', {
+                     trng_reqst_immed_supv_apvl_flg : 'Y'
+                
+                    })
+        };
+//reeject
+
+   function rejectThis(){
+    
+                        $.post('/approvalz', {
+                            
+                            trng_reqst_immed_supv_apvl_flg : 'N'
+                            
+                            
+                            })
+        
+            };
+                
+            </script>
+            <form action="/getInfo"method="post">
+           <button onclick = "approveThis()">Approve Me!</button>
+            <button onclick = "rejectThis()">Reject This!</button>
+      
+        </form>
+        
+        <div>
+    </body>
+</html>

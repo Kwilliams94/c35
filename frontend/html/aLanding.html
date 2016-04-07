@@ -1,0 +1,267 @@
+
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="../js/aLanding.js"></script>
+  
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+ <nav class="navbar navbar-inverse navbar fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Scott Wissel</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="https://nodeclone-jrbella.c9users.io/aLanding">Home</a></li>
+        <li><a href="https://nodeclone-jrbella.c9users.io/status">Status</a></li>
+        <li><a href="https://nodeclone-jrbella.c9users.io/cHistory">My Course History</a></li>
+		<li><a href="https://nodeclone-jrbella.c9users.io/rForm">Request Training</a></li>
+		<li><a href="https://nodeclone-jrbella.c9users.io/contactUs">Contact Us</a></li>
+      </ul>
+      
+    </div>
+  </div>
+</nav>
+<br><br><br><br><br><br><br>
+<div>
+<style>
+body {
+    background-image: url("http://www.ttx.com/Libraries/officers/careers-rotation_1.sflb.ashx");
+    background-repeat: repeat-x;
+}
+Try it yourself »
+
+ 
+
+div  {
+    position: absolute;
+    left: 30px;
+    border: 3px solid #73AD21;
+}
+
+
+
+
+
+</style>
+</div>
+
+
+
+
+
+
+
+
+<div id = "Jeff">
+  
+
+  
+
+    <br>
+    
+    <div id="cor_info" class= "col-sm-9">
+      <div class="well">
+        <h4>Waiting Approvals</h4>
+        <style>
+            
+            th, td {
+    padding: 15px;
+    text-align: left;
+
+            }
+          </style>
+        
+<!-- This is the table -->
+<table id="aLanding_table">
+
+
+   
+<table>
+
+
+
+</table> 
+
+</form>
+
+<!--Add a prompt that says "Are you sure!?" to onclick buttons-->
+
+        
+        <p></p>
+        
+      </div>
+      
+      </div>
+</div>
+<div id="Kevin">
+  
+ <h3>Employee Information</h3>
+      <br>
+   <br>
+          <div>
+         <h4>  Course Type</h4>
+           <p id= "trng_cors_typ" ></p>
+            
+        </div>
+        
+      <div>
+      <h4>  Course Name</h4>
+           <p id = "trng_cors_nm"></p>
+            
+        </div>
+        
+        <div>
+      
+        <h4>  Start Date</h4>
+           <p id = "trng_cors_strt_dt"></p>
+            
+        </div>
+        
+        <div>
+      
+      <h4>  End Date</h4>
+           <p id="trng_cors_end_dt"></p>
+            
+        </div>
+        <div>
+      
+        <h4> Total Hours</h4>
+           <p id= "trng_cors_totl_nbr_hrs"></p>
+            
+        </div>
+        <div>
+      
+        <h4> Location</h4>
+           <p id = "trng_cors_locn"></p>
+            
+        </div>
+        
+        <div>
+      
+         <h4> Cost</h4>
+           <p id = "trng_cors_cost"></p>
+            
+        </div>
+        
+        <div>
+      
+       <h4> Related Expenses</h4>
+           <p id = "trng_cors_rltd_exp_amt"></p>
+            
+        </div>
+    <div>
+      
+       <h4> Is the cost included in this years plan?</h4>
+           <p id = "trng_cors_budg_pln_flg"></p>
+            
+        </div>
+        <div>
+            <h1>VENDOR INFORMATION</h1>
+      
+         <h4>Name</h4>
+           <p id = "vndr_nm"></p>
+            
+        </div>
+        
+         <div>
+             <h4> Address </h4>
+            
+          
+           <p id = "vndr_mail_addr"></p>
+            
+        </div>
+        <div>
+            <h4>City</h4>
+      
+       
+           <p id =" vndr_mail_city"></p>
+            
+        </div>
+        <div>
+          <h4>  State </h4>
+      
+           <p id ="vndr_mail_st"></p>
+            
+        </div>
+        <div>
+           <h4> Zip Code </h4>
+      
+           <p id ="vndr_mail_zip_cd"></p>
+          <script> function approveThis(){
+    
+              $.post('/approvalz', {
+                     trng_reqst_immed_supv_apvl_flg : 'Y'
+                
+                    })
+        };
+//reeject
+
+   function rejectThis(){
+       
+       confirm("Are you sure?")
+    
+                        $.post('/approvalz', {
+                            
+                            trng_reqst_immed_supv_apvl_flg : 'N'
+                            
+                            
+                            })
+        
+            };
+                
+            </script>
+           <button onclick = "approveThis()">Approve Me!</button>
+            <button onclick = "rejectThis()">Reject This!</button>
+       <br>
+       <br>
+       <br>
+        </div> 
+</div>
+
+
+<!-- terminater------------------------------------------------->
+
+  <script>
+    $('.detailView').on('click', function(){
+       // $('#Jeff').hide();
+       // $('#Kevin').fadeIn();
+        console.log('here');
+        var id = ($(this).attr('id'));
+        console.log($(this));
+    });
+      
+   
+          
+    </script>
+</body>
+</html>
+
+
+

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  
+  
+  
+  
+  
+  
+  
+
+</head>
+<body>
+
+<form id='register' action='register.php' method='post'
+    accept-charset='UTF-8'><br><br><br><br><br><br><br><br><br><br><br>
+<fieldset >
+<legend>Register</legend>
+<input type='hidden' name='submitted' id='submitted' value='1'/>
+<label for='name' >Your Full Name*: </label>
+<input type='text' name='name' id='name' maxlength="50" />
+<label for='email' >Email Address*:</label>
+<input type='text' name='email' id='email' maxlength="50" />
+ 
+<label for='username' >UserName*:</label>
+<input type='text' name='username' id='username' maxlength="50" />
+ 
+<label for='password' >Password*:</label>
+<input type='password' name='password' id='password' maxlength="50" />
+<input type='submit' name='Submit' value='Submit' />
+ 
+</fieldset>
+</form>
+
+
+
+<style>
+    .header {
+        color: #36A0FF;
+        font-size: 27px;
+        padding: 10px;
+    }
+
+    .bigicon {
+        font-size: 35px;
+        color: #36A0FF;
+    }
+	body {
+    background-image: url("http://www.ttx.com/Libraries/officers/careers-rotation_1.sflb.ashx");
+    background-repeat: repeat-x;
+}
+</style>
+
+<script>
+var frmvalidator  = new Validator("register");
+frmvalidator.EnableOnPageErrorDisplay();
+frmvalidator.EnableMsgsTogether();
+frmvalidator.addValidation("name","req","Please provide your name");
+ 
+frmvalidator.addValidation("email","req","Please provide your email address");
+ 
+frmvalidator.addValidation("email","email","Please provide a valid email address");
+ 
+frmvalidator.addValidation("username","req","Please provide a username");
+ 
+frmvalidator.addValidation("password","req","Please provide a password");
+</script>
+
+
+
+<script>
+
+function RegisterUser()
+{
+    if(!isset($_POST['submitted']))
+    {
+       return false;
+    }
+     
+    $formvars = array();
+     
+    if(!$this->ValidateRegistrationSubmission())
+    {
+        return false;
+    }
+     
+    $this->CollectRegistrationSubmission($formvars);
+     
+    if(!$this->SaveToDatabase($formvars))
+    {
+        return false;
+    }
+     
+    if(!$this->SendUserConfirmationEmail($formvars))
+    {
+        return false;
+    }
+ 
+    $this->SendAdminIntimationEmail($formvars);
+     
+    return true;
+}
+</script>
+
+
+<script>
+function SaveToDatabase(&$formvars)
+   {
+       if(!$this->DBLogin())
+       {
+           $this->HandleError("Database login failed!");
+           return false;
+       }
+       if(!$this->Ensuretable())
+       {
+           return false;
+       }
+       if(!$this->IsFieldUnique($formvars,'email'))
+       {
+           $this->HandleError("This email is already registered");
+           return false;
+       }
+        
+       if(!$this->IsFieldUnique($formvars,'username'))
+       {
+           $this->HandleError("This UserName is already used. Please try another username");
+           return false;
+       }        
+       if(!$this->InsertIntoDB($formvars))
+       {
+           $this->HandleError("Inserting to Database failed!");
+           return false;
+       }
+       return true;
+   }
+</script>
+
+
+<script>
+function CreateTable()
+{
+    $qry = "Create Table $this->tablename (".
+            "id_user INT NOT NULL AUTO_INCREMENT ,".
+            "name VARCHAR( 128 ) NOT NULL ,".
+            "email VARCHAR( 64 ) NOT NULL ,".
+            "phone_number VARCHAR( 16 ) NOT NULL ,".
+            "username VARCHAR( 16 ) NOT NULL ,".
+            "password VARCHAR( 32 ) NOT NULL ,".
+            "confirmcode VARCHAR(32) ,".
+            "PRIMARY KEY ( id_user )".
+            ")";
+             
+    if(!mysql_query($qry,$this->connection))
+    {
+        $this->HandleDBError("Error creating the table \nquery was\n $qry");
+        return false;
+    }
+    return true;
+}
+</script>
+<script>
+function InsertIntoDB(&$formvars)
+{
+    $confirmcode = $this->MakeConfirmationMd5($formvars['email']);
+ 
+    $insert_query = 'insert into '.$this->tablename.'(
+            name,
+            email,
+            username,
+            password,
+            confirmcode
+            )
+            values
+            (
+            "' . $this->SanitizeForSQL($formvars['name']) . '",
+            "' . $this->SanitizeForSQL($formvars['email']) . '",
+            "' . $this->SanitizeForSQL($formvars['username']) . '",
+            "' . md5($formvars['password']) . '",
+            "' . $confirmcode . '"
+            )';      
+    if(!mysql_query( $insert_query ,$this->connection))
+    {
+        $this->HandleDBError("Error inserting data to the table\nquery:$insert_query");
+        return false;
+    }        
+    return true;
+}	
+</script>
+<script>
+function SendUserConfirmationEmail(&$formvars)
+{
+    $mailer = new PHPMailer();
+     
+    $mailer->CharSet = 'utf-8';
+     
+    $mailer->AddAddress($formvars['email'],$formvars['name']);
+     
+    $mailer->Subject = "Your registration with ".$this->sitename;
+ 
+    $mailer->From = $this->GetFromAddress();        
+     
+    $confirmcode = urlencode($this->MakeConfirmationMd5($formvars['email']));
+     
+    $confirm_url = $this->GetAbsoluteURLFolder().'/confirmreg.php?code='.$confirmcode;
+     
+    $mailer->Body ="Hello ".$formvars['name']."\r\n\r\n".
+    "Thanks for your registration with ".$this->sitename."\r\n".
+    "Please click the link below to confirm your registration.\r\n".
+    "$confirm_url\r\n".
+    "\r\n".
+    "Regards,\r\n".
+    "Webmaster\r\n".
+    $this->sitename;
+ 
+    if(!$mailer->Send())
+    {
+        $this->HandleError("Failed sending registration confirmation email.");
+        return false;
+    }
+    return true;
+}
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

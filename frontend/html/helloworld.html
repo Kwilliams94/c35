@@ -1,0 +1,57 @@
+<html>
+    <head>
+<<<<<<< HEAD
+        <link rel="stylesheet" href="../css/helloworld.css" type="text/css" />
+    
+     <script src="https://code.jquery.com/jquery-1.12.2.min.js" integrity="sha256-lZFHibXzMHo3GGeehn1hudTAP3Sc0uKXBXAzHX1sjtk=" crossorigin="anonymous"></script>
+          <script src="./js/helloworld.js"></script>
+       </head> 
+        <body>
+            
+             <p>Let's add trains to a database</p>
+        <form class="form-group" id="addTrainForm">
+            <div class="input"> Train Name: <input type="text" id="nameOfTrain" maxlength="100"/></div>
+            <div class="input"> In Service? <input type="checkbox" id="inService" value="In Service"/></div>
+            <div class="input"> Number of Available Cars: <input type="number" min="1" max="10" value="0"
+                                                                  id="availableTrains"/></div>
+            <div>
+                <input type="submit" class="btn btn-default"/>
+            </div>
+        </form>
+  <a href="/trainList" class="btn btn-default">Go to train page</a>
+
+        </body>
+    
+</html>
+=======
+         <link rel="stylesheet" type="text/css" href="../css/helloworld.css">
+      <script src="https://code.jquery.com/jquery-1.12.2.js" integrity="sha256-VUCyr0ZXB5VhBibo2DkTVhdspjmxUgxDGaLQx7qb7xY=" crossorigin="anonymous"></script>
+
+    </head>
+    <body>hello world from html file!
+    <button id="foo">
+        
+        foo
+    </button>
+    
+<button id ='bar'>
+    
+    bar
+</button>    
+    
+    <script>
+    
+   var message = "Spoon!";
+$( "#foo" ).bind( "click", {
+  msg: message
+}, function( event ) {
+  alert( event.data.msg );
+});
+message = "Not in the face!";
+$( "#bar" ).bind( "click", {
+  msg: message
+}, function( event ) {
+  alert( event.data.msg );
+});</script>!</body>
+</html>
+>>>>>>> ab1aa2dc12b5b08bec94680ec6157f16a0b7331b
